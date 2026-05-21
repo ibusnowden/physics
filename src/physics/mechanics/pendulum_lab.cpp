@@ -38,6 +38,32 @@ void PendulumLab::step() {
         angular_velocity_radps_ += acceleration_radps2 * config_.timestep_s;
         angle_rad_ += angular_velocity_radps_ * config_.timestep_s;
         break;
+    case Integrator::RungeKutta4: {
+        const double dt = config_.timestep_s;
+        const auto acceleration = [this](double angle_rad) {
+            const double displacement = config_.equation == PendulumEquation::SmallAngle ? angle_rad : std::sin(angle_rad);
+            return -(config_.gravity_mps2 / config_.length_m) * displacement;
+        };
+
+        const double theta0 = angle_rad_;
+        const double omega0 = angular_velocity_radps_;
+
+        const double k1_theta = omega0;
+        const double k1_omega = acceleration(theta0);
+
+        const double k2_theta = omega0 + k1_omega * (0.5 * dt);
+        const double k2_omega = acceleration(theta0 + k1_theta * (0.5 * dt));
+
+        const double k3_theta = omega0 + k2_omega * (0.5 * dt);
+        const double k3_omega = acceleration(theta0 + k2_theta * (0.5 * dt));
+
+        const double k4_theta = omega0 + k3_omega * dt;
+        const double k4_omega = acceleration(theta0 + k3_theta * dt);
+
+        angle_rad_ = theta0 + (k1_theta + 2.0 * k2_theta + 2.0 * k3_theta + k4_theta) * (dt / 6.0);
+        angular_velocity_radps_ = omega0 + (k1_omega + 2.0 * k2_omega + 2.0 * k3_omega + k4_omega) * (dt / 6.0);
+        break;
+    }
     }
 
     time_s_ += config_.timestep_s;

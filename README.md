@@ -4,7 +4,8 @@ A small C++ learning sandbox for physics experiments.
 
 The goal is to write the physics ourselves and keep graphics/tooling thin. The
 first lab is projectile motion, with explicit Euler and semi-implicit Euler so
-we can see how numerical integration affects energy and trajectories.
+we can see how numerical integration affects energy and trajectories. RK4 is
+also available for higher-accuracy comparisons.
 
 ## Build
 
@@ -37,6 +38,12 @@ build/projectile_trajectory.svg
 build/projectile_energy.svg
 build/pendulum_angle.svg
 build/pendulum_energy.svg
+```
+
+To run regression tests:
+
+```sh
+make test
 ```
 
 There is also a raylib graphical lab:
@@ -76,3 +83,4 @@ See [ROADMAP.md](ROADMAP.md) for the long-term curriculum and project sequence.
 3. Track total mechanical energy over time.
 4. Reduce and increase the timestep to see numerical error.
 5. Compare nonlinear pendulum motion with the small-angle approximation.
+6. Compare RK4 projectile motion against the analytic no-drag solution.

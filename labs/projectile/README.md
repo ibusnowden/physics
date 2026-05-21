@@ -39,4 +39,9 @@ Controls:
 - `D`: toggle drag
 - `1`: explicit Euler
 - `2`: semi-implicit Euler
+- `3`: RK4
 
+## Analytic Comparison
+
+The no-drag scenario has a closed-form solution. The console app writes
+analytic position columns and position error into `build/projectile_ideal.csv`.

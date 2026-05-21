@@ -13,15 +13,15 @@ Implemented:
 - Quadratic drag
 - Explicit Euler
 - Semi-implicit Euler
+- RK4
+- Analytic projectile comparison
+- Regression tests
 - Energy diagnostics
 - Simple pendulum
 - Small-angle pendulum approximation
 
 Next:
 
-- RK4 integrator
-- Analytic projectile comparison
-- Regression tests
 - Spring and mass experiments
 - Orbit lab
 
@@ -31,4 +31,3 @@ Next:
 - Fields and electromagnetism
 - Thermal and statistical mechanics
 - Quantum toy models
-

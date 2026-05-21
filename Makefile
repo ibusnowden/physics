@@ -7,7 +7,7 @@ RAYLIB_LDFLAGS ?= -L$(HOMEBREW_PREFIX)/lib -lraylib -framework OpenGL -framework
 
 PHYSICS_SRC := src/physics/mechanics/particle.cpp src/physics/mechanics/projectile_lab.cpp src/physics/mechanics/pendulum_lab.cpp
 
-.PHONY: all console plots raylib clean
+.PHONY: all console plots raylib test clean
 
 all: console
 
@@ -30,6 +30,10 @@ plots: console
 
 raylib: $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(RAYLIB_CXXFLAGS) $(PHYSICS_SRC) labs/projectile/projectile_raylib.cpp -o $(BUILD_DIR)/projectile_raylib $(RAYLIB_LDFLAGS)
+
+test: $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(PHYSICS_SRC) tests/regression_tests.cpp -o $(BUILD_DIR)/regression_tests
+	./$(BUILD_DIR)/regression_tests
 
 clean:
 	rm -rf $(BUILD_DIR)

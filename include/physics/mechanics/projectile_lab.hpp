@@ -25,6 +25,8 @@ struct ProjectileSample {
     double total_energy_j = 0.0;
 };
 
+ProjectileSample analytic_projectile_sample(const ProjectileConfig& config, double time_s);
+
 class ProjectileLab {
 public:
     explicit ProjectileLab(ProjectileConfig config);

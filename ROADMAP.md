@@ -14,6 +14,8 @@ Current focus.
 - Pendulum
 - Integrator comparison
 - RK4
+- Analytic projectile comparison
+- Regression tests
 - Springs
 - Orbits
 - Double pendulum
@@ -57,4 +59,3 @@ Current focus.
 - Validate against analytic solutions when available.
 - Track energy, momentum, and numerical error.
 - Add dependencies only when they directly help learning or visualization.
-

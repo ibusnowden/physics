@@ -144,6 +144,10 @@ int main() {
             config.integrator = physics::Integrator::SemiImplicitEuler;
             lab.set_config(config);
         }
+        if (IsKeyPressed(KEY_THREE)) {
+            config.integrator = physics::Integrator::RungeKutta4;
+            lab.set_config(config);
+        }
         if (IsKeyPressed(KEY_D)) {
             config.drag_coefficient_kg_per_m = config.drag_coefficient_kg_per_m == 0.0 ? 0.025 : 0.0;
             lab.set_config(config);
@@ -175,7 +179,7 @@ int main() {
 
         const auto& sample = lab.latest();
         DrawText("Projectile Motion Lab", 32, 24, 24, BLACK);
-        DrawText("Space pause/resume   R reset   D drag   1 explicit Euler   2 semi-implicit Euler", 32, 58, 16, DARKGRAY);
+        DrawText("Space pause/resume   R reset   D drag   1 explicit Euler   2 semi-implicit Euler   3 RK4", 32, 58, 16, DARKGRAY);
 
         const std::string status = paused ? "paused" : (sample.position_m.y < 0.0 ? "landed" : "running");
         const std::string integrator = std::string("integrator  ") + physics::name_of(config.integrator);

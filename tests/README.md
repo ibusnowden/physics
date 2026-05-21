@@ -1,5 +1,15 @@
 # Tests
 
-Regression tests will live here. The first planned target is a small C++
-executable that checks numerical output against analytic or known-good values.
+Regression tests live here.
 
+Run:
+
+```sh
+make test
+```
+
+Current checks:
+
+- RK4 projectile motion matches the analytic no-drag solution.
+- Quadratic drag removes mechanical energy.
+- Small-angle pendulum follows the linear cosine solution.

@@ -36,7 +36,7 @@ diagnostic.
 ## Things To Try
 
 1. Set `timestep_s` to `1.0 / 10.0`, `1.0 / 30.0`, and `1.0 / 120.0`.
-2. Compare explicit Euler and semi-implicit Euler.
+2. Compare explicit Euler, semi-implicit Euler, and RK4.
 3. Change `start_velocity_mps`.
 4. Add quadratic drag:
 
@@ -66,3 +66,15 @@ The `make plots` command generates both as SVG files:
 build/projectile_trajectory.svg
 build/projectile_energy.svg
 ```
+
+## Analytic Check
+
+With no drag, projectile motion has a closed-form solution:
+
+```text
+position(t) = position0 + velocity0 * t + 0.5 * acceleration * t^2
+velocity(t) = velocity0 + acceleration * t
+```
+
+The console app records analytic position and numerical position error for the
+ideal no-drag run.
