@@ -1,6 +1,6 @@
 #pragma once
 
-#include "physics/particle.hpp"
+#include "physics/mechanics/particle.hpp"
 
 namespace physics {
 
@@ -35,4 +35,3 @@ inline void integrate(Particle& particle, double dt_s, Integrator integrator) {
 }
 
 } // namespace physics
-

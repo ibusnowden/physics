@@ -1,4 +1,4 @@
-#include "physics/pendulum_lab.hpp"
+#include "physics/mechanics/pendulum_lab.hpp"
 
 #include <fstream>
 #include <iomanip>
@@ -70,4 +70,3 @@ int main() {
     run_lab("pendulum_small_angle", small_angle, "build/pendulum_small_angle.csv");
     return 0;
 }
-

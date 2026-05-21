@@ -1,4 +1,4 @@
-#include "physics/particle.hpp"
+#include "physics/mechanics/particle.hpp"
 
 namespace physics {
 

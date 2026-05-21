@@ -39,7 +39,7 @@ build/pendulum_angle.svg
 build/pendulum_energy.svg
 ```
 
-There is also a placeholder for a graphical lab:
+There is also a raylib graphical lab:
 
 ```sh
 make raylib
@@ -55,11 +55,19 @@ brew install raylib
 ## Project Shape
 
 ```text
-include/physics/  public physics headers
-src/physics/      physics implementation
-src/apps/         runnable experiments
-notes/            study notes and lab prompts
+include/physics/math/        vector and math types
+include/physics/mechanics/   mechanics models
+include/physics/numerics/    integrators and numerical methods
+src/physics/mechanics/       mechanics implementation
+labs/projectile/             projectile apps, plots, and notes
+labs/pendulum/               pendulum apps, plots, and notes
+notes/curriculum.md          curriculum map
+notes/mechanics/             mechanics study notes
+tests/                       regression tests
+build/                       generated binaries, CSVs, and plots
 ```
+
+See [ROADMAP.md](ROADMAP.md) for the long-term curriculum and project sequence.
 
 ## First Experiments
 

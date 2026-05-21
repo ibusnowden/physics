@@ -1,4 +1,4 @@
-#include "physics/pendulum_lab.hpp"
+#include "physics/mechanics/pendulum_lab.hpp"
 
 #include <cmath>
 
@@ -74,4 +74,3 @@ PendulumSample PendulumLab::make_sample() const {
 }
 
 } // namespace physics
-

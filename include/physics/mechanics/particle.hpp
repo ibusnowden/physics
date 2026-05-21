@@ -1,6 +1,6 @@
 #pragma once
 
-#include "physics/vec2.hpp"
+#include "physics/math/vec2.hpp"
 
 namespace physics {
 

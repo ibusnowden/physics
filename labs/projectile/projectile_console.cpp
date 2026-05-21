@@ -1,4 +1,4 @@
-#include "physics/projectile_lab.hpp"
+#include "physics/mechanics/projectile_lab.hpp"
 
 #include <fstream>
 #include <iomanip>
